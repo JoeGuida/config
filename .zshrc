@@ -7,7 +7,12 @@ if ! zgen saved; then
 
 # PROMPT ----------------------------------------------------------------------
 
-PROMPT="$c[bold]$c[blue]%n $c[violet][$(git rev-parse --abbrev-ref HEAD 2> /dev/null)] $c[orange]%~ $c[green]\$ $c[base2]"
+setopt prompt_subst
+function precmd {
+    PREPROMPT="$c[bold]$c[blue]%n $c[violet][$(git rev-parse --abbrev-ref HEAD 2> /dev/null)] $c[orange]%~ $c[green]\$ $c[base2]"
+
+}
+PROMPT='$PREPROMPT'
 
 # ENVIRONMENT VARIABLES -------------------------------------------------------
 
