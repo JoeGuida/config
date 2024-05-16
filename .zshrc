@@ -1,6 +1,6 @@
 # PLUGINS ---------------------------------------------------------------------
 
-source ~/.zgen/zgen.sh
+source ~/.zgen/zgen.zsh
 if ! zgen saved; then
     zgen load zpm-zsh/colors
     zgen save
