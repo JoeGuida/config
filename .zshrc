@@ -3,20 +3,21 @@
 source ~/.zgen/zgen.zsh
 if ! zgen saved; then
     zgen load zpm-zsh/colors
+    zgen load zsh-users/zsh-autosuggestions
     zgen save
+fi
 
 # PROMPT ----------------------------------------------------------------------
 
 setopt prompt_subst
 function precmd {
     PREPROMPT="$c[bold]$c[blue]%n $c[violet][$(git rev-parse --abbrev-ref HEAD 2> /dev/null)] $c[orange]%~ $c[green]\$ $c[base2]"
-
 }
 PROMPT='$PREPROMPT'
 
 # ENVIRONMENT VARIABLES -------------------------------------------------------
 
-export NVIM_DIR=/usr/local/share/nvim-linux64
+export NVIM_DIR=/usr/local/share/applications/nvim-linux64
 export PATH=$NVIM_DIR/bin:$PATH
 
 # ALIASES ---------------------------------------------------------------------
